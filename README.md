@@ -1,6 +1,6 @@
 # Sort
 Профилирование
-Bubblesort
+## Bubblesort
 Flat profile:
 
 Each sample counts as 0.01 seconds.
@@ -12,7 +12,7 @@ Each sample counts as 0.01 seconds.
 |      0.00    |           0.00     |         0.00   |    1    |         0.00    |        0.00    | bubble |
 | ------------ | ------------------ | -------------- | ------- | --------------- | -------------- | ------ |
 		    
-		    Call graph 
+		   ### Call graph 
 granularity: each sample hit covers 4 byte(s) no time propagated
 
 |index % time  | self | children |   called  | name	    |
@@ -27,87 +27,86 @@ granularity: each sample hit covers 4 byte(s) no time propagated
 
  
 ----------------------------------------------------------------------------
-Insertsort
+## Insertsort
 Flat profile:
 
 Each sample counts as 0.01 seconds.
  no time accumulated
 
-  %   cumulative   self              self     total           
- time   seconds   seconds    calls  Ts/call  Ts/call  name    
-  0.00      0.00     0.00      332     0.00     0.00  swap
-  0.00      0.00     0.00        1     0.00     0.00  insertSort
+| % time       | cumulative seconds | self  seconds  | calls   |  self Ts/call   |  total Ts/call | name      |
+| ------------ | ------------------ | -------------- | ------- | --------------- | -------------- | --------- |
+|      0.00    |           0.00     |         0.00   |  332    |         0.00    |        0.00    |  swap     |
+|      0.00    |           0.00     |         0.00   |    1    |         0.00    |        0.00    | isertsort |
+| ------------ | ------------------ | -------------- | ------- | --------------- | -------------- | --------- |
 
-
-		     Call graph 
-
-
+		    ### Call graph 
 granularity: each sample hit covers 4 byte(s) no time propagated
 
-index % time    self  children    called     name
-                0.00    0.00     332/332         insertSort [3]
-[2]      0.0    0.00    0.00     332         swap [2]
------------------------------------------------
-                0.00    0.00       1/1           main [113]
-[3]      0.0    0.00    0.00       1         insertSort [3]
-                0.00    0.00     332/332         swap [2]
------------------------------------------------
+|index % time  | self | children |   called  | name	        |
+|--------------|-----:|---------:|----------:|:-----------------|
+|              | 0.00 |    0.00  |  332/332  | insertsort [3]   |
+|[2]      0.0  | 0.00 |   0.00   |  332      | swap [2]         |
+|--------------|-----:|---------:|----------:|:-----------------|
+|              |  0.00|    0.00  |    1/1    | main [113]       |
+|[3]      0.0  |  0.00|    0.00  |    1      | insert sort[3]   |
+|              |  0.00|    0.00  |  332/332  | swap [2]         |
+|--------------|-----:|---------:|----------:|:-----------------|
 
 
 ----------------------------------------------------------------------------
-Mergesort
+## Mergesort
 Flat profile:
 
 Each sample counts as 0.01 seconds.
  no time accumulated
 
-  %   cumulative   self              self     total           
- time   seconds   seconds    calls  Ts/call  Ts/call  name    
-  0.00      0.00     0.00       42     0.00     0.00  merge
-  0.00      0.00     0.00        1     0.00     0.00  mergeSort
 
+| % time       | cumulative seconds | self  seconds  | calls   |  self Ts/call   |  total Ts/call | name      |
+| ------------ | ------------------ | -------------- | ------- | --------------- | -------------- | --------- |
+|      0.00    |           0.00     |         0.00   |  42     |         0.00    |        0.00    | merge     |
+|      0.00    |           0.00     |         0.00   |    1    |         0.00    |        0.00    | mergesort |
+| ------------ | ------------------ | -------------- | ------- | --------------- | -------------- | --------- |
 
-		     Call graph (explanation follows)
-
-
+		   ###  Call graph
 granularity: each sample hit covers 4 byte(s) no time propagated
 
-index % time    self  children    called     name
-                0.00    0.00      42/42          mergeSort [3]
-[2]      0.0    0.00    0.00      42         merge [2]
------------------------------------------------
-                                  84             mergeSort [3]
-                0.00    0.00       1/1           main [114]
-[3]      0.0    0.00    0.00       1+84      mergeSort [3]
-                0.00    0.00      42/42          merge [2]
-                                  84             mergeSort [3]
------------------------------------------------
 
+|index % time  | self | children |   called  | name	        |
+|--------------|-----:|---------:|----------:|:-----------------|
+|              | 0.00 |    0.00  |  42/42    | mergesort [3]    |
+|[2]      0.0  | 0.00 |   0.00   |  42       | merge [2]        |
+|--------------|-----:|---------:|----------:|:-----------------|
+|              |      |          | 84        | mergeSort [3]    |
+|              |  0.00|    0.00  |    1/1    | main [114]       |
+|[3]      0.0  |  0.00|    0.00  |    1+84   | mergeSort [3]    |
+|              |  0.00|    0.00  |  42/42    | merge [2]        |
+|              |      |          | 84        | mergeSort [3]    |
+|--------------|-----:|---------:|----------:|:-----------------|
 
 ----------------------------------------------------------------------------
-Quicksort
+## Quicksort
 Flat profile:
 
 Each sample counts as 0.01 seconds.
  no time accumulated
-
-  %   cumulative   self              self     total           
- time   seconds   seconds    calls  Ts/call  Ts/call  name    
-  0.00      0.00     0.00       52     0.00     0.00  swap
-  0.00      0.00     0.00        1     0.00     0.00  quicksort
   
-       Call graph (explanation follows)
+| % time       | cumulative seconds | self  seconds  | calls   |  self Ts/call   |  total Ts/call | name      |
+| ------------ | ------------------ | -------------- | ------- | --------------- | -------------- | --------- |
+|      0.00    |           0.00     |         0.00   |  52     |         0.00    |        0.00    | swap      |
+|      0.00    |           0.00     |         0.00   |    1    |         0.00    |        0.00    | quicksort |
+| ------------ | ------------------ | -------------- | ------- | --------------- | -------------- | --------- |
 
-
+       ### Call graph 
 granularity: each sample hit covers 4 byte(s) no time propagated
 
-index % time    self  children    called     name
-                0.00    0.00      52/52          quicksort [3]
-[2]      0.0    0.00    0.00      52         swap [2]
------------------------------------------------
-                                  35             quicksort [3]
-                0.00    0.00       1/1           main [114]
-[3]      0.0    0.00    0.00       1+35      quicksort [3]
-                0.00    0.00      52/52          swap [2]
-                                  35             quicksort [3]
------------------------------------------------
+|index % time  | self | children |   called  | name	        |
+|--------------|-----:|---------:|----------:|:-----------------|
+|              | 0.00 |    0.00  |  52/52    | quicksort [3]    |
+|[2]      0.0  | 0.00 |   0.00   |  52       | swap [2]         |
+|--------------|-----:|---------:|----------:|:-----------------|
+|              |      |          | 35        | quicksort [3]    |
+|              |  0.00|    0.00  |    1/1    | main [114]       |
+|[3]      0.0  |  0.00|    0.00  |    1+35   | quicksort [3]    |
+|              |  0.00|    0.00  |  52/52    | swap [2]         |
+|              |      |          | 35        | quicksort [3]    |
+|--------------|-----:|---------:|----------:|:-----------------|
