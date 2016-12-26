@@ -6,16 +6,13 @@ Flat profile:
 Each sample counts as 0.01 seconds.
  no time accumulated
 
-| % time       | cumulative | self    | calls   |  self   |  total  | name   |
-|	       |    seconds | seconds |		| Ts/call | Ts/call |        |
-|-------------:|-----------:|--------:|--------:|--------:|--------:|-------:|
-|      0.00    |   0.00     |  0.00   |  343    | 0.00    | 0.00    | swap   |
-|      0.00    |   0.00     |  0.00   |    1    | 0.00	  | 0.00    | bubble |
-|-------------:|-----------:|--------:|--------:|--------:|--------:|-------:|
-
-		     Call graph 
-
-
+| % time       | cumulative seconds | self  seconds  | calls   |  self Ts/call   |  total Ts/call | name   |
+| ------------ | ------------------ | -------------- | ------- | --------------- | -------------- | ------ |
+|      0.00    |           0.00     |         0.00   |  343    |         0.00    |        0.00    |  swap  |
+|      0.00    |           0.00     |         0.00   |    1    |         0.00    |        0.00    | bubble |
+| ------------ | ------------------ | -------------- | ------- | --------------- | -------------- | ------ |
+		    
+		    Call graph 
 granularity: each sample hit covers 4 byte(s) no time propagated
 
 |index % time  | self | children |   called  | name	    |
